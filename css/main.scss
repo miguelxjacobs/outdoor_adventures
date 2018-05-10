@@ -2,7 +2,69 @@
  Main stylesheet styled by Miguel Jacobs
 *****************************************/
 
+//sitewide defaults
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+}
+
+//creation of grid layout
+body {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "article article aside"
+  "div_break_one div_break_one div_break_one"
+  "first_section first_section first_section"
+  "div_break_two div_break_two div_break_two"
+  "second_section second_section second_section"
+  "footer footer footer";
+  grid-template-rows: 200px 60px 600px 50px 400px 50px 400px 150px;
+  grid-template-columns:25% 1fr 15%;
+  grid-gap: 10px;
+  height: 100vh;
+}
+
+//assigning structure to tags
+header, nav, article, aside, div, section, footer {
+  padding: 20px;
+  background: lightblue;
+}
+
+//Instantiation of grid
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+article {
+  grid-area: article;
+}
+
+aside {
+  grid-area: aside;
+}
+
+#break_one {
+  grid-area: div_break_one;
+}
+
+#section_one {
+  grid-area: first_section;
+}
+
+#break_two {
+  grid-area: div_break_two;
+}
+
+#section_two {
+  grid-area: second_section;
+}
+
+footer {
+  grid-area: footer;
 }
