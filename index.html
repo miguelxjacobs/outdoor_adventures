@@ -7,67 +7,132 @@
 
     <link rel="stylesheet" href="css/main.css">
 
+    <!-- Logo font -->
+    <link href="https://fonts.googleapis.com/css?family=Flamenco" rel="stylesheet">
+
+    <!-- Text Font -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   </head>
   <body>
 
     <header class="page_header">
-      <img id="header_background" src="assets/images/header_bg.jpeg" alt="bg">
-      <div id="company_name"><h1>Outdoor_Adventures<h1></div>
+      <div class="logo_wrapper">
+        <img class="company_logo" src="assets/images/logo.png" alt="logo" width="150px" height="150px">
+      </div>
+      <div id="company_name"><h1><a href="index.html" class="homepage_link">Outdoor_Adventures</a><h1></div>
     </header>
 
+    <!-- Navbar structure here -->
     <nav id="page_nav">
-      <ul>
+      <ul id="visible">
         <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">Gallery
+          <ul id="hidden">
+            <li><a href="gallery.html#hikingID">Hiking</a></li>
+            <li><a href="gallery.html#campingID">Camping</a></li>
+            <li><a href="gallery.html#fishingID">Fishing</a></li>
+            <li><a href="gallery.html#mountainClimbingID">Climbing</a></li>
+          </ul>
+        </a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
+    <!-- Structuring of main article
+      *Wrapper box structure included
+      **Main information section
+    -->
     <article class="page_article">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div class="article_wrapper">
+        <h2 id="header_2">
+          Discover a vast array of outdoor adventures all located in the beautiful city of Cape Town.
+        </h2>
+        <h3 id="header_3">
+          Don't be afraid to unleash your inner adventurer!
+        </h3>
+      </div>
     </article>
 
+    <!-- Aside structure and editing done here -->
     <aside class="page_aside">
-      Aside
+      <h3>Event Of The Week</h3>
     </aside>
 
-    <div id="break_one">
-      Div One
+    <!-- Styling of break classes
+      *These are all the tiny divs inbetween the beginning of each section
+      **Identical styling for each class of "break"
+    -->
+    <div class="break break_one">
+      <span id="hiking_text">
+        To see more on hiking simply click the button below
+      </span>
     </div>
 
-    <section id="section_one">
-      <div id="hiking_info"><h2>Hiking<h2></div>
+    <!-- Styling of sectioning classes
+      *These are all the main sections for each category
+      **Identical styling for each class of "sectioning"
+
+      ***Also the main link to gallery page sections
+    -->
+    <section id="hikingID" class="sectioning section_one">
+      <a href="gallery.html#hikingID">
+        <div class="button hiking_button">
+          <h2>Visit Hiking<h2>
+        </div>
+      </a>
     </section>
 
-    <div id="break_two">
-      Div Two
+    <div class="break break_two">
+      <span id="camping_text">
+        To see more on camping simply click the button below
+      </span>
     </div>
 
-    <section id="section_two">
-      Section Two
+    <section id="campingID" class="sectioning section_two">
+      <a href="gallery.html#campingID">
+        <div class="button camping_button">
+          <h2>Visit Camping<h2>
+        </div>
+      </a>
     </section>
 
 
-    <div id="break_three">
-      Div Three
+    <div class="break break_three">
+      <span id="fishing_text">
+        To see more on fishing simply click the button below
+      </span>
     </div>
 
-    <section id="section_three">
-      Section Three
+    <section id="fishingID" class="sectioning section_three">
+      <a href="gallery.html#fishingID">
+        <div class="button fishing_button">
+          <h2>Visit Fishing<h2>
+          </div>
+        </a>
     </section>
 
-
-    <div id="break_four">
-      Div Four
+    <div class="break break_four">
+      <span id="climbing_text">
+        To see more on mountain climbing simply click the button below
+      </span>
     </div>
 
-    <section id="section_four">
-      Section Four
+    <section id="mountainClimbingID" class="sectioning section_four">
+      <a href="gallery.html#mountainClimbingID">
+        <div class="button climbing_button">
+          <h2>Visit Climbing<h2>
+          </div>
+        </a>
     </section>
 
-    <footer class="page_footer">Created by Miguel Jacobs 2018.</footer>
+    <!-- Footer structure -->
+    <footer class="page_footer">
+      <span id="footer_text">
+        Created by Miguel Jacobs 2018.
+      <span>
+    </footer>
 
   </body>
 </html>

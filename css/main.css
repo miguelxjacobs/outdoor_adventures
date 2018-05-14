@@ -4,30 +4,35 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Work Sans', sans-serif; }
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased; }
 
 body {
   display: grid;
   grid-template-areas: "header header header" "nav nav nav" "article article aside" "div_break_one div_break_one div_break_one" "first_section first_section first_section" "div_break_two div_break_two div_break_two" "second_section second_section second_section" "div_break_three div_break_three div_break_three" "third_section third_section third_section" "div_break_four div_break_four div_break_four" "fourth_section fourth_section fourth_section" "footer footer footer";
   grid-template-rows: 200px 60px 600px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
-  grid-template-columns: 25% 1fr 15%;
-  grid-gap: 10px; }
+  grid-template-columns: 25% 1fr 25%;
+  font-family: 'Lato', sans-serif; }
 
 header, nav, article, aside, div, section, footer {
-  padding: 20px;
-  background: gray; }
+  padding: 20px; }
 
 header {
   grid-area: header;
   padding: 0;
-  position: relative; }
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-family: 'Flamenco', cursive; }
+  header .logo_wrapper {
+    opacity: 0.5;
+    text-align: center; }
+    header .logo_wrapper .company_logo {
+      cursor: pointer; }
   header #company_name {
     position: absolute;
-    top: 80px;
-    right: 100px;
-    background-color: transparent;
-    color: transparent;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.8);
+    top: 140px;
+    right: 590px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text; }
@@ -35,76 +40,133 @@ header {
     width: 100%;
     height: 200px; }
 
+.homepage_link {
+  text-decoration: none;
+  color: black; }
+
 #page_nav {
   grid-area: nav;
   text-align: center;
   word-spacing: 100px;
-  opacity: 0.8;
   overflow: hidden;
   position: sticky;
   top: 0;
-  z-index: 1; }
-
-li {
-  display: inline;
-  color: #333; }
-
-a {
-  text-decoration: none;
-  color: black; }
-
-a:hover {
-  color: brown; }
+  color: #666;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1); }
+  #page_nav li {
+    display: inline-block; }
+  #page_nav a {
+    text-decoration: none;
+    color: #666;
+    transition: 300ms; }
+    #page_nav a:hover {
+      color: white;
+      text-shadow: 0 0 3px #666; }
+  #page_nav #hidden {
+    display: none; }
+  #page_nav #visible li:hover > ul {
+    display: block; }
+  #page_nav #hidden ul ul {
+    background-color: #3C3E94;
+    width: 150px;
+    border: 1px solid white;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    float: left;
+    color: white;
+    font-size: 18px;
+    position: relative; }
 
 article {
-  grid-area: article; }
+  grid-area: article;
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: contain;
+  grid-row-start: header;
+  grid-row-end: section_one;
+  grid-column-end: aside;
+  position: relative;
+  padding-top: 300px;
+  padding-left: 100px;
+  z-index: -1; }
+
+.article_wrapper {
+  width: 900px;
+  height: 520px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: 5px; }
 
 aside {
   grid-area: aside; }
 
-#break_one {
+.break {
+  position: relative;
+  text-align: center; }
+
+.break_one {
   grid-area: div_break_one; }
 
-#section_one {
-  grid-area: first_section;
-  position: relative;
-  background-image: url("../assets/images/hiking_bg.jpg");
-  background-size: 100% 100%; }
-
-#hiking_info {
-  position: absolute;
-  top: 200px;
-  left: 47%;
-  border-radius: 12px; }
-
-#break_two {
+.break_two {
   grid-area: div_break_two; }
 
-#section_two {
-  grid-area: second_section;
-  position: relative;
-  background-image: url("../assets/images/camping_bg.jpg");
-  background-size: 100% 100%; }
-
-#break_three {
+.break_three {
   grid-area: div_break_three; }
 
-#section_three {
-  grid-area: third_section;
-  position: relative;
-  background-image: url("../assets/images/fishing_bg.jpg");
-  background-size: 100% 100%; }
-
-#break_four {
+.break_four {
   grid-area: div_break_four; }
 
-#section_four {
-  grid-area: fourth_section;
+.sectioning {
   position: relative;
-  background-image: url("../assets/images/rockclimbing_bg.jpeg");
-  background-size: 100% 100%; }
+  background-size: 100% 100%;
+  overflow: hidden;
+  position: sticky;
+  top: 0; }
+
+.section_one {
+  grid-area: first_section;
+  background-image: url("../assets/images/hiking_bg.jpg"); }
+
+.section_two {
+  grid-area: second_section;
+  background-image: url("../assets/images/camping_bg.jpg"); }
+
+.section_three {
+  grid-area: third_section;
+  background-image: url("../assets/images/fishing_bg.jpg"); }
+
+.section_four {
+  grid-area: fourth_section;
+  background-image: url("../assets/images/rockclimbing_bg.jpeg"); }
+
+#hiking_text, #camping_text, #fishing_text, #climbing_text {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4); }
+
+.hiking_button, .camping_button, .fishing_button, .climbing_button {
+  position: absolute;
+  top: 400px;
+  left: 44%;
+  border-radius: 12px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px black solid;
+  color: black; }
+
+.button:hover {
+  cursor: pointer; }
 
 footer {
-  grid-area: footer; }
+  grid-area: footer;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+  border-top: 1px rgba(255, 255, 255, 0.3) solid; }
+  footer #footer_text {
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    font-size: 12px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -8,39 +8,122 @@
   </head>
   <body>
 
-        <header class="page_header">
-          Header
-        </header>
+    <header class="page_header">
+      <div class="logo_wrapper">
+        <img class="company_logo" src="assets/images/logo.png" alt="logo" width="150px" height="150px">
+      </div>
+      <div id="company_name"><h1><a href="index.html" class="homepage_link">Outdoor_Adventures</a><h1></div>
+    </header>
 
-        <nav class="page_nav">
-          Nav
-        </nav>
+    <!-- Navbar structure here -->
+    <nav id="page_nav">
+      <ul id="visible">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery
+          <ul id="hidden">
+            <li><a href="#hikingID">Hiking</a></li>
+            <li><a href="#campingID">Camping</a></li>
+            <li><a href="#fishingID">Fishing</a></li>
+            <li><a href="#mountainClimbingID">Climbing</a></li>
+          </ul>
+        </a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 
-        <article class="page_article">
-          Article
-        </article>
+    <!-- Structuring of main article
+      *Wrapper box structure included
+      **Main information section
+    -->
+    <article class="page_article">
+      <div class="article_wrapper">
+        <h2 id="header_2">
+          Discover a vast array of outdoor adventures all located in the beautiful city of Cape Town.
+        </h2>
+        <h3 id="header_3">
+          Don't be afraid to unleash your inner adventurer!
+        </h3>
+      </div>
+    </article>
 
-        <aside class="page_aside">
-          Aside
-        </aside>
+    <!-- Aside structure and editing done here -->
+    <aside class="page_aside">
+      <h3>Event Of The Week</h3>
+    </aside>
 
-        <div id="break_one">
-          Div One
+    <!-- Styling of break classes
+      *These are all the tiny divs inbetween the beginning of each section
+      **Identical styling for each class of "break"
+    -->
+    <div class="break break_one">
+      <span id="hiking_text">
+        To see more on hiking simply click the button below
+      </span>
+    </div>
+
+    <!-- Styling of sectioning classes
+      *These are all the main sections for each category
+      **Identical styling for each class of "sectioning"
+
+      ***Also the main link to gallery page sections
+    -->
+    <section id="hikingID" class="sectioning section_one">
+      <a href="gallery.html#hikingID">
+        <div class="button hiking_button">
+          <h2>Visit Hiking<h2>
         </div>
+      </a>
+    </section>
 
-        <section id="section_one">
-          Section One
-        </section>
+    <div class="break break_two">
+      <span id="camping_text">
+        To see more on camping simply click the button below
+      </span>
+    </div>
 
-        <div id="break_two">
-          Div Two
+    <section id="campingID" class="sectioning section_two">
+      <a href="gallery.html#campingID">
+        <div class="button camping_button">
+          <h2>Visit Camping<h2>
         </div>
+      </a>
+    </section>
 
-        <section id="section_two">
-          Section Two
-        </section>
 
-        <footer class="page_footer">Footer</footer>
-        
+    <div class="break break_three">
+      <span id="fishing_text">
+        To see more on fishing simply click the button below
+      </span>
+    </div>
+
+    <section id="fishingID" class="sectioning section_three">
+      <a href="gallery.html#fishingID">
+        <div class="button fishing_button">
+          <h2>Visit Fishing<h2>
+          </div>
+        </a>
+    </section>
+
+    <div class="break break_four">
+      <span id="climbing_text">
+        To see more on mountain climbing simply click the button below
+      </span>
+    </div>
+
+    <section id="mountainClimbingID" class="sectioning section_four">
+      <a href="gallery.html#mountainClimbingID">
+        <div class="button climbing_button">
+          <h2>Visit Climbing<h2>
+          </div>
+        </a>
+    </section>
+
+    <!-- Footer structure -->
+    <footer class="page_footer">
+      <span id="footer_text">
+        Created by Miguel Jacobs 2018.
+      <span>
+    </footer>
+
   </body>
 </html>
