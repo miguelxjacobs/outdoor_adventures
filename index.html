@@ -3,8 +3,12 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Outdoor Adventures - Home</title>
 
+    <!-- Adding icon to tabs -->
+    <link rel="icon" href="assets/images/logo.png">
+
+    <title>Outdoor Adventures - Home</title>
+    <!-- Adding stylesheet -->
     <link rel="stylesheet" href="css/main.css">
 
     <!-- Logo font -->
@@ -12,24 +16,27 @@
 
     <!-- Text Font -->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
 
   </head>
   <body>
 
+    <!-- Header structure here -->
     <header class="page_header">
       <div class="logo_wrapper">
-        <img class="company_logo" src="assets/images/logo.png" alt="logo" width="150px" height="150px">
+        <a href="index.html">
+          <img class="company_logo" src="assets/images/logo.png" alt="logo" width="150px" height="150px">
+        </a>
       </div>
       <div id="company_name"><h1><a href="index.html" class="homepage_link">Outdoor_Adventures</a><h1></div>
     </header>
 
     <!-- Navbar structure here -->
     <nav id="page_nav">
-      <ul id="visible">
+      <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="gallery.html">Gallery
-          <ul id="hidden">
+          <ul>
             <li><a href="gallery.html#hikingID">Hiking</a></li>
             <li><a href="gallery.html#campingID">Camping</a></li>
             <li><a href="gallery.html#fishingID">Fishing</a></li>
@@ -47,17 +54,19 @@
     <article class="page_article">
       <div class="article_wrapper">
         <h2 id="header_2">
-          Discover a vast array of outdoor adventures all located in the beautiful city of Cape Town.
+          <span>Unleash your inner adventurer!</span>
         </h2>
         <h3 id="header_3">
-          Don't be afraid to unleash your inner adventurer!
+          <br /><span>Discover a vast array of outdoor adventures all located in the beautiful city of Cape Town.<span>
         </h3>
       </div>
     </article>
 
     <!-- Aside structure and editing done here -->
     <aside class="page_aside">
-      <h3>Event Of The Week</h3>
+      <div class="aside_wrapper">
+        <h3>Event Of The Week</h3>
+      </div>
     </aside>
 
     <!-- Styling of break classes

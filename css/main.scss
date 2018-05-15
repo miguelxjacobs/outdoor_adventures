@@ -2,7 +2,23 @@
  Main stylesheet styled by Miguel Jacobs
 *****************************************/
 
+//Global variables
+//*Number behind text name indicates transparency value
+$gray_text: #999;
+$black_text: #000;
+$white_text: #fff;
+$white_transparent-bg2: rgba(255,255,255,0.2);
+$black_transparent-bg6: rgba(0,0,0,0.6);
+$black_transparent-bg7: rgba(0,0,0,0.7);
+$box_shadow: 0 1px 3px rgba(255,255,255,0.1);
+$borders3: 1px rgba(255,255,255,0.3) solid;
+$borders5: 6px rgba(255, 255, 255, 0.5) solid;
+$white_shadow1: 0 1px 3px rgba(255, 255, 255, 0.1);
+$white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
+
+
 //sitewide defaults
+//*Ensures the prevention of future inconsistencies/alignment glitches
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +44,7 @@ body {
   "footer footer footer";
   grid-template-rows: 200px 60px 600px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
   grid-template-columns:25% 1fr 25%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Poiret One', cursive;
 }
 
 //assigning structure to tags
@@ -41,9 +57,8 @@ header {
   grid-area: header;
   padding: 0;
   position: relative;
-  background-color: rgba(0,0,0,0.7);
-    font-family: 'Flamenco', cursive;
-
+  background-color: $black_transparent-bg7;
+  font-family: 'Flamenco', cursive;
   .logo_wrapper {
     opacity: 0.5;
     text-align: center;
@@ -57,7 +72,7 @@ header {
     position: absolute;
     top: 140px;
     right: 590px;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-shadow: $white_shadow3;
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -72,51 +87,67 @@ header {
 
 .homepage_link {
   text-decoration: none;
-  color: black;
+  color: $black_text;
 }
+
+//Nav ul Styling
+@mixin navStyle {
+  color: $gray_text;
+  font-size: 24px;
+  word-spacing: 20px;
+}
+
 //Navbar styling + descendents
 #page_nav {
   grid-area: nav;
+  @include navStyle;
   text-align: center;
-  word-spacing: 100px;
-  overflow: hidden;
   position: sticky;
   top: 0;
-  color: #666;
   z-index: 1;
-  background-color: rgba(0,0,0,0.6);
-  box-shadow: 0 1px 3px rgba(255,255,255,0.1);
+  background-color: $black_transparent-bg6;
+  box-shadow: $box_shadow;
   li {
+    width: 150px;
     display: inline-block;
   }
   a {
     text-decoration: none;
-    color: #666;
+    color: $white_text;
+    text-shadow: 0 0 1px white;
     transition: 300ms;
     &:hover {
-      color: white;
-      text-shadow: 0 0 3px #666;
+      color: $gray_text;
+      text-shadow: 0 0 5px #666;
     }
   }
-
-  #hidden {
+  ul ul {
     display: none;
   }
-  #visible li:hover > ul {
+  ul li:hover > ul {
     display: block;
+    position: absolute;
   }
-  #hidden ul ul {
-    background-color:#3C3E94;
-		width:150px;
-		border:1px solid white;
-		height:50px;
-		line-height:50px;
-		text-align:center;
-		float:left;
-		color:white;
-		font-size:18px;
-		position:relative;
+   ul ul {
+    width: 150px;
+    height: 200px;
+		position: relative;
+    background: linear-gradient(transparent, $black_transparent-bg6);
+    border-radius: 8px;
+		line-height: 50px;
+		text-align: center;
+		color: $white_text;
+		font-size: 18px;
+    padding-top: 10px;
   }
+}
+
+//Semi-transparent black text wrapper block
+@mixin article-aside_block {
+  height: 520px;
+  background-color: $black_transparent-bg6;
+  color: $white_text;
+  border-radius: 8px;
 }
 
 //Article styling
@@ -134,20 +165,28 @@ article {
 }
 
 #header_2 {
-  
+  span {
+    border-bottom: $borders5;
+  }
 }
 
 .article_wrapper {
   width: 900px;
-  height: 520px;
-  background-color:rgba(0,0,0,0.6);
-  color: white;
-  border-radius: 5px;
+  @include article-aside_block;
 }
 
 //Aside styling
 aside {
   grid-area: aside;
+  position: relative;
+  top: 20px;
+  padding-right: 100px;
+  z-index: -1;
+}
+
+.aside_wrapper {
+  width: 300px;
+  @include article-aside_block;
 }
 
 //Section breaks
@@ -173,12 +212,10 @@ aside {
   grid-area: div_break_four;
 }
 
-//Global site styled background
+//Parrallax effect
 @mixin backgroundStyle {
-  position: relative;
-  background-size: 100% 100%;
-  overflow: hidden;
   position: sticky;
+  background-size: 100% 100%;
   top: 0;
 }
 
@@ -211,8 +248,8 @@ aside {
 //Section heading text styling
 #hiking_text, #camping_text, #fishing_text, #climbing_text {
   font-size: 20px;
-  color: rgba(0,0,0,0.8);
-  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+  color: $black_transparent-bg7;
+  text-shadow: $white_shadow3;
 }
 
 //Global button styling
@@ -222,7 +259,7 @@ aside {
   left: 44%;
   border-radius: 12px;
   text-align: center;
-  background-color: rgba(255,255,255,0.2);
+  background-color: $white_transparent-bg2;
   border: 1px black solid;
   color: black;
 }
@@ -234,17 +271,19 @@ aside {
 
 .button:hover {
   cursor: pointer;
+  background-color: $black_transparent-bg6;
+  transition: 0.2s;
 }
 
 //Footer styling
 footer {
   grid-area: footer;
   position: relative;
-  background-color: rgba(255,255,255,0.2);
+  background-color: $white_transparent-bg2;
   text-align: center;
-  border-top: 1px rgba(255,255,255,0.3) solid;
+  border-top: $borders3;
   #footer_text {
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-    font-size: 12px;
+    text-shadow: $white_shadow3;
+    font-size: 16px;
   }
 }
