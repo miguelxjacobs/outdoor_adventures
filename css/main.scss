@@ -1,6 +1,7 @@
 /*****************************************
  Main stylesheet styled by Miguel Jacobs
 *****************************************/
+/* -----------------------------------CORE PAGE STYLING------------------------------ */
 
 //Global variables
 //*Number behind text name indicates transparency value
@@ -24,6 +25,7 @@ $white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
   padding: 0;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Poiret One', cursive;
 }
 
 //creation of grid layout
@@ -44,7 +46,6 @@ body {
   "footer footer footer";
   grid-template-rows: 200px 60px 600px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
   grid-template-columns:25% 1fr 25%;
-  font-family: 'Poiret One', cursive;
 }
 
 //assigning structure to tags
@@ -72,6 +73,7 @@ header {
     position: absolute;
     top: 140px;
     right: 590px;
+    color: transparent;
     text-shadow: $white_shadow3;
     background-clip: text;
     -webkit-background-clip: text;
@@ -160,7 +162,7 @@ article {
   grid-column-end: aside;
   position: relative;
   padding-top: 300px;
-  padding-left: 100px;
+  padding-left: 20px;
   z-index: -1;
 }
 
@@ -170,8 +172,12 @@ article {
   }
 }
 
+#header_3 {
+  padding-top: 50px;
+}
+
 .article_wrapper {
-  width: 900px;
+  width: 920px;
   @include article-aside_block;
 }
 
@@ -276,7 +282,7 @@ aside {
 }
 
 //Footer styling
-footer {
+.footer {
   grid-area: footer;
   position: relative;
   background-color: $white_transparent-bg2;
@@ -286,4 +292,44 @@ footer {
     text-shadow: $white_shadow3;
     font-size: 16px;
   }
+}
+
+
+
+/* -----------------------------------CONTACT PAGE STYLING------------------------------ */
+#contact-page {
+  grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "article article article"
+  "footer footer footer";
+  grid-template-rows: 200px 60px 600px 150px;
+  grid-template-columns:25% 1fr 25%;
+
+}
+
+.article_contact {
+  grid-area: article;
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: contain;
+  position: relative;
+  padding-left: 20px;
+  z-index: 1;
+}
+
+.article_wrapper_contact {
+  @include article-aside_block;
+  position: absolute;
+  top: 0;
+  left: 300px;
+}
+
+form {
+  width: 500px;
+  height: 400px;
+  padding: 40px;
+}
+
+.contact_footer {
+  background-color: $black_transparent-bg7;
 }

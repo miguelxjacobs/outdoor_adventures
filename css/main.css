@@ -1,18 +1,19 @@
 /*****************************************
  Main stylesheet styled by Miguel Jacobs
 *****************************************/
+/* -----------------------------------CORE PAGE STYLING------------------------------ */
 * {
   margin: 0;
   padding: 0;
   font-smoothing: antialiased;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Poiret One', cursive; }
 
 body {
   display: grid;
   grid-template-areas: "header header header" "nav nav nav" "article article aside" "div_break_one div_break_one div_break_one" "first_section first_section first_section" "div_break_two div_break_two div_break_two" "second_section second_section second_section" "div_break_three div_break_three div_break_three" "third_section third_section third_section" "div_break_four div_break_four div_break_four" "fourth_section fourth_section fourth_section" "footer footer footer";
   grid-template-rows: 200px 60px 600px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
-  grid-template-columns: 25% 1fr 25%;
-  font-family: 'Poiret One', cursive; }
+  grid-template-columns: 25% 1fr 25%; }
 
 header, nav, article, aside, div, section, footer {
   padding: 20px; }
@@ -32,6 +33,7 @@ header {
     position: absolute;
     top: 140px;
     right: 590px;
+    color: transparent;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
     background-clip: text;
     -webkit-background-clip: text;
@@ -92,14 +94,17 @@ article {
   grid-column-end: aside;
   position: relative;
   padding-top: 300px;
-  padding-left: 100px;
+  padding-left: 20px;
   z-index: -1; }
 
 #header_2 span {
   border-bottom: 6px rgba(255, 255, 255, 0.5) solid; }
 
+#header_3 {
+  padding-top: 50px; }
+
 .article_wrapper {
-  width: 900px;
+  width: 920px;
   height: 520px;
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
@@ -176,14 +181,45 @@ aside {
   background-color: rgba(0, 0, 0, 0.6);
   transition: 0.2s; }
 
-footer {
+.footer {
   grid-area: footer;
   position: relative;
   background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
   border-top: 1px rgba(255, 255, 255, 0.3) solid; }
-  footer #footer_text {
+  .footer #footer_text {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
     font-size: 16px; }
+
+/* -----------------------------------CONTACT PAGE STYLING------------------------------ */
+#contact-page {
+  grid-template-areas: "header header header" "nav nav nav" "article article article" "footer footer footer";
+  grid-template-rows: 200px 60px 600px 150px;
+  grid-template-columns: 25% 1fr 25%; }
+
+.article_contact {
+  grid-area: article;
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: contain;
+  position: relative;
+  padding-left: 20px;
+  z-index: 1; }
+
+.article_wrapper_contact {
+  height: 520px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 300px; }
+
+form {
+  width: 500px;
+  height: 400px;
+  padding: 40px; }
+
+.contact_footer {
+  background-color: rgba(0, 0, 0, 0.7); }
 
 /*# sourceMappingURL=main.css.map */
