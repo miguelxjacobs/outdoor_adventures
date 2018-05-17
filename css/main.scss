@@ -30,7 +30,7 @@ $white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 //creation of grid layout
-body {
+#index-page {
   display: grid;
   grid-template-areas:
   "header header header"
@@ -59,7 +59,7 @@ header {
   grid-area: header;
   padding: 0;
   position: relative;
-  background-color: $black_transparent-bg7;
+  background-color: $black_transparent-bg6;
   font-family: 'Flamenco', cursive;
   .logo_wrapper {
     opacity: 0.5;
@@ -116,16 +116,18 @@ header {
   }
   a {
     text-decoration: none;
-    color: $white_text;
-    text-shadow: 0 0 1px white;
+    color: $gray_text;
+    text-shadow: 0 0 5px #666;
     transition: 300ms;
     &:hover {
       color: $gray_text;
-      text-shadow: 0 0 5px #666;
+      text-shadow: 0 0 1px white;
+      transition: 0.3s;
     }
   }
   ul ul {
     display: none;
+    transition: 0.7s;
   }
   ul li:hover > ul {
     display: block;
@@ -135,7 +137,7 @@ header {
     width: 150px;
     height: 200px;
 		position: relative;
-    background: linear-gradient(transparent, $black_transparent-bg6);
+    background: linear-gradient(transparent, $black_transparent-bg9);
     border-radius: 8px;
 		line-height: 50px;
 		text-align: center;
@@ -147,10 +149,10 @@ header {
 
 //Semi-transparent black text wrapper block
 @mixin article-aside_block {
-  height: 520px;
-  background-color: $black_transparent-bg6;
-  color: $white_text;
-  border-radius: 8px;
+  height: 500px;
+  background-color: $black_transparent-bg9;
+  color: $gray_text;
+  border-radius: 0 0 8px 8px;
 }
 
 //Article styling
@@ -160,7 +162,7 @@ article {
   grid-row-end: section_one;
   grid-column-end: aside;
   position: relative;
-  padding-top: 300px;
+  padding-top: 260px;
   padding-left: 20px;
   z-index: -1;
 }
@@ -173,6 +175,7 @@ article {
 #header_2 {
   span {
     border-bottom: $borders5;
+    text-transform: capitalize;
   }
 }
 
@@ -189,7 +192,7 @@ article {
 aside {
   grid-area: aside;
   position: relative;
-  top: 20px;
+  padding-top: 0;
   padding-right: 100px;
   z-index: -1;
 }
@@ -203,6 +206,7 @@ aside {
 .break {
   position: relative;
   text-align: center;
+  background-color: $black_transparent-bg9;
 }
 
 //Break headings
@@ -272,6 +276,7 @@ aside {
   background-color: $white_transparent-bg2;
   border: 1px black solid;
   color: black;
+  transition: 0.2s;
 }
 
 //buttons to gallery
@@ -282,7 +287,7 @@ aside {
 .button:hover {
   cursor: pointer;
   background-color: $black_transparent-bg6;
-  transition: 0.2s;
+  color: $gray_text;
 }
 
 //Footer styling
@@ -298,7 +303,149 @@ aside {
     font-size: 16px;
   }
 }
+/* ---------------------------------END OF CORE PAGE STYLING---------------------------- */
 
+
+/* ------------------------------------GALLERY PAGE STYLING----------------------------- */
+#gallery-page {
+  display: grid;
+  grid-template-areas:
+  "header header header"
+  "nav nav nav"
+  "div_break_one div_break_one div_break_one"
+  "first_section first_section first_section"
+  "div_break_two div_break_two div_break_two"
+  "second_section second_section second_section"
+  "div_break_three div_break_three div_break_three"
+  "third_section third_section third_section"
+  "div_break_four div_break_four div_break_four"
+  "fourth_section fourth_section fourth_section"
+  "footer footer footer";
+  grid-template-rows: 200px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
+  grid-template-columns:25% 1fr 25%;
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: contain;
+}
+
+//Global button styling
+@mixin galleryBoxStyle {
+  position: absolute;
+  width: 1000px;
+  height: 400px;
+  top: 150px;
+  left: 16%;
+  border-radius: 12px;
+  text-align: center;
+  background-color: $white_transparent-bg2;
+  border: 1px black solid;
+  color: black;
+  transition: 0.2s;
+}
+
+//buttons to gallery
+.hiking_box, .camping_box, .fishing_box, .climbing_box {
+  @include galleryBoxStyle;
+}
+
+.images {
+  display: grid;
+  grid-template-areas:
+  "image_one image_two image_three image_four";
+  grid-template-rows: 350px;
+  grid-template-columns:repeat(4, 1fr);
+}
+
+.image_style {
+   border: 1px black solid;
+   transition: 0.8s;
+   &:hover {
+     cursor: pointer;
+     background-color: $black_transparent-bg6;
+     color: $gray_text;
+   }
+}
+
+.hiking_image_one {
+  grid-area: image_one;
+  background-image: url("../assets/images/hiking_images/hike_1.jpeg");
+  background-size: cover;
+}
+.hiking_image_two {
+  grid-area: image_two;
+  background-image: url("../assets/images/hiking_images/hike_2.jpeg");
+  background-size: cover;
+}
+.hiking_image_three {
+  grid-area: image_three;
+  background-image: url("../assets/images/hiking_images/hike_3.jpeg");
+  background-size: cover;
+}
+.hiking_image_four {
+  grid-area: image_four;
+  background-image: url("../assets/images/hiking_images/hike_4.jpeg");
+  background-size: cover;
+}
+.camping_image_one {
+  grid-area: image_one;
+  background-image: url("../assets/images/camping_images/camp_1.jpeg");
+  background-size: cover;
+}
+.camping_image_two {
+  grid-area: image_two;
+  background-image: url("../assets/images/camping_images/camp_2.jpg");
+  background-size: cover;
+}
+.camping_image_three {
+  grid-area: image_three;
+  background-image: url("../assets/images/camping_images/camp_3.jpeg");
+  background-size: cover;
+}
+.camping_image_four {
+  grid-area: image_four;
+  background-image: url("../assets/images/camping_images/camp_4.jpeg");
+  background-size: cover;
+}
+.fishing_image_one {
+  grid-area: image_one;
+  background-image: url("../assets/images/fishing_images/fish_1.jpeg");
+  background-size: cover;
+}
+.fishing_image_two {
+  grid-area: image_two;
+  background-image: url("../assets/images/fishing_images/fish_2.jpeg");
+  background-size: cover;
+}
+.fishing_image_three {
+  grid-area: image_three;
+  background-image: url("../assets/images/fishing_images/fish_3.jpeg");
+  background-size: cover;
+}
+.fishing_image_four {
+  grid-area: image_four;
+  background-image: url("../assets/images/fishing_images/fish_4.jpg");
+  background-size: cover;
+}
+.climbing_image_one {
+  grid-area: image_one;
+  background-image: url("../assets/images/climbing_images/climb_1.jpeg");
+  background-size: cover;
+}
+.climbing_image_two {
+  grid-area: image_two;
+  background-image: url("../assets/images/climbing_images/climb_2.jpeg");
+  background-size: cover;
+}
+.climbing_image_three {
+  grid-area: image_three;
+  background-image: url("../assets/images/climbing_images/climb_3.jpeg");
+  background-size: cover;
+}
+.climbing_image_four {
+  grid-area: image_four;
+  background-image: url("../assets/images/climbing_images/climb_4.jpeg");
+  background-size: cover;
+}
+/* --------------------------------END OF GALLERY PAGE STYLING-------------------------- */
 
 
 /* -----------------------------------CONTACT PAGE STYLING------------------------------ */
@@ -325,9 +472,9 @@ aside {
 .article_wrapper_contact {
   @include article-aside_block;
   position: absolute;
-  top: 40px;
+  top: 0;
   left: 400px;
-  height: 480px;
+  height: 530px;
 }
 
 form {
@@ -361,3 +508,4 @@ form {
 .contact_footer {
   background-color: $black_transparent-bg9;
 }
+/* -----------------------------END OF CONTACT PAGE STYLING----------------------------- */
