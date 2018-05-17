@@ -54,27 +54,24 @@
     <article class="article_contact">
       <div class="article_wrapper_contact">
         <h2 id="header_2">
-          <span>Contact Us!</span>
+          <span>Let's get in touch!</span>
         </h2>
         <h3 id="header_3">
-          <br /><span>We're always looking forward to hear from you, be sure to get in touch with us below<span>
+          <span>We're always looking forward to hear from you, be sure to get in touch with us below<span>
         </h3>
 
+        <!-- Contact form -->
         <form class="contact_form" action="mailto:feedback@outdoor_adventures.com" method="post">
           <label for="">Name: </label>
-
-          <input type="text" name="" value="name"><br /><br />
+          <input class="input_name" type="text" name="" value="" placeholder="name" required><br /><br />
 
           <label for="">Surname: </label>
-
-          <input type="text" name="" value="surname"><br /><br />
+          <input class="input_surname" type="text" name="" value="" placeholder="surname" required><br /><br />
 
           <label for="">Email: </label>
-
-          <input type="email" name="" value="email"><br /><br />
+          <input class="input_email" type="email" name="" value="" placeholder="email" required><br /><br />
 
           <label for="">Category: </label>
-
           <select class="category" name="category"><br /><br />
             <option value="">-Please select-</option>
             <option value="">Hiking</option>
@@ -83,7 +80,10 @@
             <option value="">Climbing</option>
           </select><br /><br />
 
-          <button type="button" name="button">Submit</button>
+          <label for="">Comments: </label>
+          <textarea name="name" rows="8" cols="80"></textarea>
+
+          <button id="submit_button" type="submit" name="button">Submit</button>
         </form>
       </div>
     </article>

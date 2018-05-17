@@ -54,7 +54,7 @@ header {
   text-align: center;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
   background-color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 1px 3px rgba(255, 255, 255, 0.1); }
   #page_nav li {
@@ -87,8 +87,6 @@ header {
 
 article {
   grid-area: article;
-  background-image: url("../assets/images/index_bg.jpg");
-  background-size: contain;
   grid-row-start: header;
   grid-row-end: section_one;
   grid-column-end: aside;
@@ -96,6 +94,10 @@ article {
   padding-top: 300px;
   padding-left: 20px;
   z-index: -1; }
+
+.page_article {
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: contain; }
 
 #header_2 span {
   border-bottom: 6px rgba(255, 255, 255, 0.5) solid; }
@@ -184,9 +186,10 @@ aside {
 .footer {
   grid-area: footer;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.9);
   text-align: center;
-  border-top: 1px rgba(255, 255, 255, 0.3) solid; }
+  border-top: 1px rgba(255, 255, 255, 0.3) solid;
+  z-index: 10; }
   .footer #footer_text {
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
     font-size: 16px; }
@@ -195,15 +198,16 @@ aside {
 #contact-page {
   grid-template-areas: "header header header" "nav nav nav" "article article article" "footer footer footer";
   grid-template-rows: 200px 60px 600px 150px;
-  grid-template-columns: 25% 1fr 25%; }
+  grid-template-columns: 25% 1fr 25%;
+  background-image: url("../assets/images/index_bg.jpg");
+  background-size: cover; }
 
 .article_contact {
   grid-area: article;
-  background-image: url("../assets/images/index_bg.jpg");
-  background-size: contain;
   position: relative;
   padding-left: 20px;
-  z-index: 1; }
+  z-index: 1;
+  background-image: transparent; }
 
 .article_wrapper_contact {
   height: 520px;
@@ -211,15 +215,32 @@ aside {
   color: #fff;
   border-radius: 8px;
   position: absolute;
-  top: 0;
-  left: 300px; }
+  top: 40px;
+  left: 400px;
+  height: 480px; }
 
 form {
   width: 500px;
-  height: 400px;
+  height: 350px;
   padding: 40px; }
+  form .input_name {
+    margin-left: 70px; }
+  form .input_surname {
+    margin-left: 52px; }
+  form .input_email {
+    margin-left: 77px; }
+  form select {
+    width: 126px;
+    margin-left: 47px; }
+
+#submit_button {
+  width: 80px;
+  height: 30px;
+  transition: 0.4s; }
+  #submit_button:hover {
+    box-shadow: 0 0 4px white; }
 
 .contact_footer {
-  background-color: rgba(0, 0, 0, 0.7); }
+  background-color: rgba(0, 0, 0, 0.9); }
 
 /*# sourceMappingURL=main.css.map */
