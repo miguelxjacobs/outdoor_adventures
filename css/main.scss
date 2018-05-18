@@ -30,7 +30,7 @@ $white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 //creation of grid layout
-#index-page {
+body {
   display: grid;
   grid-template-areas:
   "header header header"
@@ -46,7 +46,7 @@ $white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
   "fourth_section fourth_section fourth_section"
   "footer footer footer";
   grid-template-rows: 200px 60px 600px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
-  grid-template-columns:25% 1fr 25%;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
 }
 
 //assigning structure to tags
@@ -303,6 +303,7 @@ aside {
     font-size: 16px;
   }
 }
+
 /* ---------------------------------END OF CORE PAGE STYLING---------------------------- */
 
 
@@ -322,7 +323,7 @@ aside {
   "fourth_section fourth_section fourth_section"
   "footer footer footer";
   grid-template-rows: 200px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
-  grid-template-columns:25% 1fr 25%;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
   background-image: url("../assets/images/index_bg.jpg");
   background-size: contain;
 }
@@ -357,93 +358,119 @@ aside {
 
 .image_style {
    border: 1px black solid;
+   box-shadow: $white_shadow3;
    transition: 0.8s;
    &:hover {
      cursor: pointer;
      background-color: $black_transparent-bg6;
      color: $gray_text;
+     filter: grayscale(100%);
+     filter: blur(0.7px);
    }
+}
+
+//Ensures neatness of images
+.box { //undo after animation added
+  //overflow: hidden;
+}
+
+.fishing_one_text {
+  position: relative;
+  transition: all .3s ease-out;
+  top: 100%;
+
+}
+
+//Summons hidden text upon hover
+.images:hover > .fishing_one_text {
+ top: 0;
+}
+
+//Ensures neatness of images
+@mixin picStyle {
+  background-size: cover;
+  overflow: hidden;
 }
 
 .hiking_image_one {
   grid-area: image_one;
   background-image: url("../assets/images/hiking_images/hike_1.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .hiking_image_two {
   grid-area: image_two;
   background-image: url("../assets/images/hiking_images/hike_2.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .hiking_image_three {
   grid-area: image_three;
   background-image: url("../assets/images/hiking_images/hike_3.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .hiking_image_four {
   grid-area: image_four;
   background-image: url("../assets/images/hiking_images/hike_4.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .camping_image_one {
   grid-area: image_one;
   background-image: url("../assets/images/camping_images/camp_1.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .camping_image_two {
   grid-area: image_two;
   background-image: url("../assets/images/camping_images/camp_2.jpg");
-  background-size: cover;
+  @include picStyle;
 }
 .camping_image_three {
   grid-area: image_three;
   background-image: url("../assets/images/camping_images/camp_3.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .camping_image_four {
   grid-area: image_four;
   background-image: url("../assets/images/camping_images/camp_4.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .fishing_image_one {
   grid-area: image_one;
   background-image: url("../assets/images/fishing_images/fish_1.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .fishing_image_two {
   grid-area: image_two;
   background-image: url("../assets/images/fishing_images/fish_2.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .fishing_image_three {
   grid-area: image_three;
   background-image: url("../assets/images/fishing_images/fish_3.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .fishing_image_four {
   grid-area: image_four;
   background-image: url("../assets/images/fishing_images/fish_4.jpg");
-  background-size: cover;
+  @include picStyle;
 }
 .climbing_image_one {
   grid-area: image_one;
   background-image: url("../assets/images/climbing_images/climb_1.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .climbing_image_two {
   grid-area: image_two;
   background-image: url("../assets/images/climbing_images/climb_2.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .climbing_image_three {
   grid-area: image_three;
   background-image: url("../assets/images/climbing_images/climb_3.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 .climbing_image_four {
   grid-area: image_four;
   background-image: url("../assets/images/climbing_images/climb_4.jpeg");
-  background-size: cover;
+  @include picStyle;
 }
 /* --------------------------------END OF GALLERY PAGE STYLING-------------------------- */
 
@@ -456,7 +483,7 @@ aside {
   "article article article"
   "footer footer footer";
   grid-template-rows: 200px 60px 600px 150px;
-  grid-template-columns:25% 1fr 25%;
+  grid-template-columns: 0.25fr 1fr 0.25fr;
   background-image: url("../assets/images/index_bg.jpg");
   background-size: cover;
 }
@@ -506,6 +533,37 @@ form {
 }
 
 .contact_footer {
+  position: relative;
+  bottom: 0;
   background-color: $black_transparent-bg9;
 }
 /* -----------------------------END OF CONTACT PAGE STYLING----------------------------- */
+
+
+/* -------------------------------------- MEDIA QUERIES (GALLERY-PAGE) -------------------------------- */
+//Mobile Site
+@media only screen and (max-width: 360px) {
+  #gallery-page {
+    display: grid;
+    grid-template-areas:
+    "header"
+    "nav"
+    "div_break_one"
+    "first_section"
+    "div_break_two"
+    "second_section"
+    "div_break_three"
+    "third_section"
+    "div_break_four"
+    "fourth_section"
+    "footer";
+    grid-template-rows: 200px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
+    grid-template-columns: 1fr;
+    background-image: url("../assets/images/index_bg.jpg");
+    background-size: contain;
+  }
+}
+
+
+
+/*----------------------------------- END OF MEDIA QUERIES ------------------------------*/
