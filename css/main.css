@@ -7,7 +7,8 @@
   padding: 0;
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Poiret One', cursive; }
+  font-family: 'Poiret One', cursive;
+  text-decoration: none; }
 
 body {
   display: grid;
@@ -120,7 +121,7 @@ aside {
   position: relative;
   padding-top: 0;
   padding-right: 100px;
-  z-index: -1; }
+  z-index: 1; }
 
 .aside_wrapper {
   width: 300px;
@@ -128,6 +129,10 @@ aside {
   background-color: rgba(0, 0, 0, 0.9);
   color: #999;
   border-radius: 0 0 8px 8px; }
+
+#shark_pic {
+  width: 100%;
+  height: 90%; }
 
 .break {
   position: relative;
@@ -207,11 +212,12 @@ aside {
   grid-template-rows: 200px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
   grid-template-columns: 0.25fr 1fr 0.25fr;
   background-image: url("../assets/images/index_bg.jpg");
-  background-size: contain; }
+  background-size: contain;
+  background-repeat: no-repeat; }
 
 .hiking_box, .camping_box, .fishing_box, .climbing_box {
   position: absolute;
-  width: 1000px;
+  width: 70%;
   height: 400px;
   top: 150px;
   left: 16%;
@@ -231,21 +237,11 @@ aside {
 .image_style {
   border: 1px black solid;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
-  transition: 0.8s; }
+  transition: 0.5s; }
   .image_style:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #999;
-    filter: grayscale(100%);
-    filter: blur(0.7px); }
-
-.fishing_one_text {
-  position: relative;
-  transition: all .3s ease-out;
-  top: 100%; }
-
-.images:hover > .fishing_one_text {
-  top: 0; }
+    filter: grayscale(100%); }
 
 .hiking_image_one {
   grid-area: image_one;
@@ -346,15 +342,17 @@ aside {
 /* --------------------------------END OF GALLERY PAGE STYLING-------------------------- */
 /* -----------------------------------CONTACT PAGE STYLING------------------------------ */
 #contact-page {
+  display: grid;
   grid-template-areas: "header header header" "nav nav nav" "article article article" "footer footer footer";
   grid-template-rows: 200px 60px 600px 150px;
-  grid-template-columns: 0.25fr 1fr 0.25fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
   background-image: url("../assets/images/index_bg.jpg");
-  background-size: cover; }
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
 
 .article_contact {
-  grid-area: article;
-  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/2;
   padding-left: 20px;
   z-index: 1;
   background-image: transparent; }
@@ -363,23 +361,19 @@ aside {
   height: 500px;
   background-color: rgba(0, 0, 0, 0.9);
   color: #999;
-  border-radius: 0 0 8px 8px;
-  position: absolute;
-  top: 0;
-  left: 400px;
-  height: 530px; }
+  border-radius: 0 0 8px 8px; }
 
-form {
+.contact_form {
   width: 500px;
   height: 350px;
   padding: 40px; }
-  form .input_name {
+  .contact_form .input_name {
     margin-left: 70px; }
-  form .input_surname {
+  .contact_form .input_surname {
     margin-left: 52px; }
-  form .input_email {
+  .contact_form .input_email {
     margin-left: 77px; }
-  form select {
+  .contact_form select {
     width: 126px;
     margin-left: 47px; }
 
@@ -396,15 +390,43 @@ form {
   background-color: rgba(0, 0, 0, 0.9); }
 
 /* -----------------------------END OF CONTACT PAGE STYLING----------------------------- */
-/* -------------------------------------- MEDIA QUERIES (GALLERY-PAGE) -------------------------------- */
+/*----------------------------------- END OF MEDIA QUERIES ------------------------------*/
+/* -------------------------------------- MEDIA QUERIES (CONTACT-PAGE) -------------------------------- */
 @media only screen and (max-width: 360px) {
-  #gallery-page {
+  body {
     display: grid;
-    grid-template-areas: "header" "nav" "div_break_one" "first_section" "div_break_two" "second_section" "div_break_three" "third_section" "div_break_four" "fourth_section" "footer";
-    grid-template-rows: 200px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
+    grid-template-areas: "header" "nav" "article" "footer";
+    grid-template-rows: 200px 120px 800px 150px;
     grid-template-columns: 1fr;
     background-image: url("../assets/images/index_bg.jpg");
     background-size: contain; } }
+#page_nav {
+  grid-area: nav; }
+
+.artical_contact .article_wrapper_contact {
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #999;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  top: 0;
+  left: 400px;
+  height: 530px; }
+
+form {
+  width: 200px;
+  height: 350px;
+  padding: 40px; }
+  form .input_name {
+    margin-left: 70px; }
+  form .input_surname {
+    margin-left: 52px; }
+  form .input_email {
+    margin-left: 77px; }
+  form select {
+    width: 126px;
+    margin-left: 47px; }
+
 /*----------------------------------- END OF MEDIA QUERIES ------------------------------*/
 
 /*# sourceMappingURL=main.css.map */
