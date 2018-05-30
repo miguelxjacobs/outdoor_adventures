@@ -405,27 +405,27 @@ aside {
 
 .hiking_image_one {
   grid-area: image_one;
-  background-image: url("../assets/images/hiking_images/hike_1.jpeg");
+  background-image: url("../assets/images/hiking_images/hike_1.jpg");
   @include picStyle;
 }
 .hiking_image_two {
   grid-area: image_two;
-  background-image: url("../assets/images/hiking_images/hike_2.jpeg");
+  background-image: url("../assets/images/hiking_images/hike_2.jpg");
   @include picStyle;
 }
 .hiking_image_three {
   grid-area: image_three;
-  background-image: url("../assets/images/hiking_images/hike_3.jpeg");
+  background-image: url("../assets/images/hiking_images/hike_3.jpg");
   @include picStyle;
 }
 .hiking_image_four {
   grid-area: image_four;
-  background-image: url("../assets/images/hiking_images/hike_4.jpeg");
+  background-image: url("../assets/images/hiking_images/hike_4.jpg");
   @include picStyle;
 }
 .camping_image_one {
   grid-area: image_one;
-  background-image: url("../assets/images/camping_images/camp_1.jpeg");
+  background-image: url("../assets/images/camping_images/camp_1.jpg");
   @include picStyle;
 }
 .camping_image_two {
@@ -435,27 +435,27 @@ aside {
 }
 .camping_image_three {
   grid-area: image_three;
-  background-image: url("../assets/images/camping_images/camp_3.jpeg");
+  background-image: url("../assets/images/camping_images/camp_3.jpg");
   @include picStyle;
 }
 .camping_image_four {
   grid-area: image_four;
-  background-image: url("../assets/images/camping_images/camp_4.jpeg");
+  background-image: url("../assets/images/camping_images/camp_4.jpg");
   @include picStyle;
 }
 .fishing_image_one {
   grid-area: image_one;
-  background-image: url("../assets/images/fishing_images/fish_1.jpeg");
+  background-image: url("../assets/images/fishing_images/fish_1.jpg");
   @include picStyle;
 }
 .fishing_image_two {
   grid-area: image_two;
-  background-image: url("../assets/images/fishing_images/fish_2.jpeg");
+  background-image: url("../assets/images/fishing_images/fish_2.jpg");
   @include picStyle;
 }
 .fishing_image_three {
   grid-area: image_three;
-  background-image: url("../assets/images/fishing_images/fish_3.jpeg");
+  background-image: url("../assets/images/fishing_images/fish_3.jpg");
   @include picStyle;
 }
 .fishing_image_four {
@@ -465,22 +465,22 @@ aside {
 }
 .climbing_image_one {
   grid-area: image_one;
-  background-image: url("../assets/images/climbing_images/climb_1.jpeg");
+  background-image: url("../assets/images/climbing_images/climb_1.jpg");
   @include picStyle;
 }
 .climbing_image_two {
   grid-area: image_two;
-  background-image: url("../assets/images/climbing_images/climb_2.jpeg");
+  background-image: url("../assets/images/climbing_images/climb_2.jpg");
   @include picStyle;
 }
 .climbing_image_three {
   grid-area: image_three;
-  background-image: url("../assets/images/climbing_images/climb_3.jpeg");
+  background-image: url("../assets/images/climbing_images/climb_3.jpg");
   @include picStyle;
 }
 .climbing_image_four {
   grid-area: image_four;
-  background-image: url("../assets/images/climbing_images/climb_4.jpeg");
+  background-image: url("../assets/images/climbing_images/climb_4.jpg");
   @include picStyle;
 }
 /* --------------------------------END OF GALLERY PAGE STYLING-------------------------- */
@@ -616,6 +616,7 @@ aside {
     grid-template-columns: 1fr;
     background-image: url("../assets/images/index_bg.jpg");
     background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -633,6 +634,7 @@ aside {
 }
 
 form {
+  grid-area: article;
   width: 200px;
   height: 350px;
   padding: 40px;
