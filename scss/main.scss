@@ -31,11 +31,10 @@ $white_shadow3: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 html{
-  background-image: url(images/index_bg.jpg);
+  background-image: url(../images/index_bg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  background-color: #000;
 }
 
 //creation of grid layout
@@ -138,7 +137,7 @@ header {
     display: none;
     transition: 0.7s;
   }
-  ul li:hover > ul {
+  ul li:hover ul {
     display: block;
     position: absolute;
   }
@@ -489,6 +488,7 @@ aside {
 
 //Form styling
 .contact_form {
+  display: inline-table;
   width: 500px;
   height: 350px;
   padding: 40px;
@@ -638,7 +638,7 @@ aside {
     "div_break_four"
     "fourth_section"
     "footer";
-    grid-template-rows: auto;
+    grid-template-rows: 300px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;;
     grid-template-columns: 1fr;
     #page_nav {
       grid-area: nav;
@@ -783,19 +783,9 @@ aside {
   }
 }
 
-#contact-page {
-  #page_nav {
-    grid-area: nav;
-    li {
-      font-size: 14px;
-      display: inline;
-    }
-    ul ul {
-      display: none;
-    }
-  }  
+.contact_form{  
+  display: inline-table;
 }
-
 /*----------------------------------- END OF TAB MEDIA QUERIES ------------------------------*/
 /* -------------------------------------- MEDIA QUERIES (Mobile View) -------------------------------- */
 
@@ -1073,6 +1063,7 @@ aside {
         text-align: center;
         justify-content: center;
         .contact_form {
+          display: inline-table;
           width: 160px;
           height: 300px;
           .input_name, .input_surname, .input_email, .category {

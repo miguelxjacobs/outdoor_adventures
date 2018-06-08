@@ -11,11 +11,10 @@
   text-decoration: none; }
 
 html {
-  background-image: url(images/index_bg.jpg);
+  background-image: url(../images/index_bg.jpg);
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-color: #000; }
+  background-size: 100% 100%; }
 
 #index-page {
   display: grid;
@@ -79,7 +78,7 @@ header {
   #page_nav ul ul {
     display: none;
     transition: 0.7s; }
-  #page_nav ul li:hover > ul {
+  #page_nav ul li:hover ul {
     display: block;
     position: absolute; }
   #page_nav ul ul {
@@ -328,6 +327,7 @@ aside {
   border-radius: 0 0 8px 8px; }
 
 .contact_form {
+  display: inline-table;
   width: 500px;
   height: 350px;
   padding: 40px; }
@@ -426,7 +426,7 @@ aside {
   #gallery-page {
     display: grid;
     grid-template-areas: "header" "nav" "div_break_one" "first_section" "div_break_two" "second_section" "div_break_three" "third_section" "div_break_four" "fourth_section" "footer";
-    grid-template-rows: auto;
+    grid-template-rows: 300px 60px 50px 800px 50px 800px 50px 800px 50px 800px 150px;
     grid-template-columns: 1fr; }
     #gallery-page #page_nav {
       grid-area: nav; }
@@ -540,13 +540,8 @@ aside {
       grid-area: image;
       width: 100%; }
 
-  #contact-page #page_nav {
-    grid-area: nav; }
-    #contact-page #page_nav li {
-      font-size: 14px;
-      display: inline; }
-    #contact-page #page_nav ul ul {
-      display: none; }
+  .contact_form {
+    display: inline-table; }
 
   /*----------------------------------- END OF TAB MEDIA QUERIES ------------------------------*/
   /* -------------------------------------- MEDIA QUERIES (Mobile View) -------------------------------- */ }
@@ -734,6 +729,7 @@ aside {
         text-align: center;
         justify-content: center; }
         #contact-page .article_contact .article_wrapper_contact .contact_form {
+          display: inline-table;
           width: 160px;
           height: 300px; }
           #contact-page .article_contact .article_wrapper_contact .contact_form .input_name, #contact-page .article_contact .article_wrapper_contact .contact_form .input_surname, #contact-page .article_contact .article_wrapper_contact .contact_form .input_email, #contact-page .article_contact .article_wrapper_contact .contact_form .category {
