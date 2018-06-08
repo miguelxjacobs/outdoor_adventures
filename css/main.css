@@ -166,7 +166,7 @@ aside {
 
 .section_four {
   grid-area: fourth_section;
-  background-image: url("../assets/images/rockclimbing_bg.jpeg");
+  background-image: url("../assets/images/rockclimbing_bg.jpg");
   background-repeat: no-repeat; }
 
 #hiking_text, #camping_text, #fishing_text, #climbing_text {
@@ -357,6 +357,70 @@ aside {
 
 /* -----------------------------END OF CONTACT PAGE STYLING----------------------------- */
 @media only screen and (max-width: 768px) {
+  #index-page {
+    display: grid;
+    grid-template-areas: "header header" "nav nav" "article aside" "div_break_one div_break_one"  "first_section first_section" "second_section second_section" "div_break_three div_break_three" "third_section third_section" "div_break_four div_break_four" "fourth_section fourth_section" "footer footer";
+    grid-template-rows: 200px 60px 600px 80px 800px 80px 800px 80px 800px 80px 800px 150px;
+    grid-template-columns: 1fr 1fr; }
+    #index-page article {
+      grid-area: article;
+      padding-top: 0;
+      padding-left: 0; }
+      #index-page article .article_wrapper {
+        width: 400px;
+        height: 500px;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #999;
+        border-radius: 0 0 8px 8px; }
+        #index-page article .article_wrapper p {
+          font-size: 14px; }
+    #index-page aside {
+      grid-area: aside;
+      padding-top: 0;
+      padding-right: 0; }
+      #index-page aside .aside_wrapper {
+        width: 200px;
+        height: 700px;
+        height: 500px;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: #999;
+        border-radius: 0 0 8px 8px; }
+        #index-page aside .aside_wrapper #shark_pic {
+          width: 100%;
+          height: 90%; }
+    #index-page .break_one {
+      grid-area: div_break_one; }
+    #index-page .break_two {
+      grid-area: div_break_two; }
+    #index-page .break_three {
+      grid-area: div_break_three; }
+    #index-page .break_four {
+      grid-area: div_break_four; }
+    #index-page .section_one {
+      grid-area: first_section;
+      background-image: url("../assets/images/hiking_bg.jpg");
+      background-repeat: no-repeat;
+      height: 800px; }
+    #index-page .section_two {
+      grid-area: second_section;
+      background-image: url("../assets/images/camping_bg.jpg");
+      background-repeat: no-repeat;
+      height: 800px; }
+    #index-page .section_three {
+      grid-area: third_section;
+      background-image: url("../assets/images/fishing_bg.jpg");
+      background-repeat: no-repeat;
+      height: 800px; }
+    #index-page .section_four {
+      grid-area: fourth_section;
+      background-image: url("../assets/images/rockclimbing_bg.jpg");
+      background-repeat: no-repeat;
+      height: 800px; }
+    #index-page #hiking_text, #index-page #camping_text, #index-page #fishing_text, #index-page #climbing_text {
+      font-size: 20px;
+      color: rgba(0, 0, 0, 0.7);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3); }
+
   #gallery-page {
     display: grid;
     grid-template-areas: "header" "nav" "div_break_one" "first_section" "div_break_two" "second_section" "div_break_three" "third_section" "div_break_four" "fourth_section" "footer";
@@ -467,7 +531,7 @@ aside {
 
   /*----------------------------------- END OF TAB MEDIA QUERIES ------------------------------*/
   /* -------------------------------------- MEDIA QUERIES (Mobile View) -------------------------------- */ }
-@media only screen and (max-width: 768px) and (max-width: 360px) {
+@media only screen and (max-width: 768px) and (max-width: 425px) {
   /* Home Page Responsiveness */
   #index-page {
     display: grid;
@@ -475,8 +539,20 @@ aside {
     grid-template-rows: 200px 120px 1000px 150px;
     grid-template-columns: 1fr;
     /* MOBILE FIX (HOME) - DO NOT EDIT! */ }
+    #index-page .page_header {
+      text-align: center;
+      justify-content: center; }
+      #index-page .page_header .logo_wrapper {
+        padding: 5px; }
+      #index-page .page_header #company_name {
+        font-size: 12px;
+        padding: 5px;
+        text-align: center; }
     #index-page #page_nav {
       grid-area: nav; }
+      #index-page #page_nav li {
+        width: 100%;
+        display: inline-block; }
       #index-page #page_nav ul ul {
         display: none; }
     #index-page .mobile_article_home {
@@ -500,8 +576,20 @@ aside {
     grid-template-columns: 1fr;
     justify-content: center;
     margin: 0; }
+    #gallery-page .page_header {
+      text-align: center;
+      justify-content: center; }
+      #gallery-page .page_header .logo_wrapper {
+        padding: 5px; }
+      #gallery-page .page_header #company_name {
+        font-size: 12px;
+        padding: 5px;
+        text-align: center; }
     #gallery-page #page_nav {
       grid-area: nav; }
+      #gallery-page #page_nav li {
+        width: 100%;
+        display: inline-block; }
       #gallery-page #page_nav ul ul {
         display: none; }
     #gallery-page .sectioning {
@@ -531,6 +619,15 @@ aside {
       grid-template-rows: repeat(4, 1fr);
       grid-template-columns: 1fr;
       justify-content: center; }
+      #gallery-page .images .page_header {
+        text-align: center;
+        justify-content: center; }
+        #gallery-page .images .page_header .logo_wrapper {
+          padding: 5px; }
+        #gallery-page .images .page_header #company_name {
+          font-size: 12px;
+          padding: 5px;
+          text-align: center; }
     #gallery-page .hiking_image_one, #gallery-page .camping_image_one, #gallery-page .fishing_image_one, #gallery-page .climbing_image_one {
       background-size: cover;
       overflow: hidden;
@@ -589,6 +686,9 @@ aside {
     background-size: cover; }
     #contact-page #page_nav {
       grid-area: nav; }
+      #contact-page #page_nav li {
+        width: 100%;
+        display: inline-block; }
       #contact-page #page_nav ul ul {
         display: none; }
     #contact-page .article_contact {
