@@ -619,24 +619,21 @@ aside {
         display: inline-block; }
       #gallery-page #page_nav ul ul {
         display: none; }
-    #gallery-page .sectioning {
-      margin: 0;
-      padding: 0; }
-      #gallery-page .sectioning .hiking_box, #gallery-page .sectioning .camping_box, #gallery-page .sectioning .fishing_box, #gallery-page .sectioning .climbing_box {
-        position: absolute;
-        justify-content: center;
-        text-align: center;
-        width: 100%;
-        height: 350px;
-        top: 20px;
-        left: 0;
-        right: 0;
-        padding: 0;
-        border-radius: 12px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border: 1px black solid;
-        color: black;
-        transition: 0.2s; }
+    #gallery-page .hiking_box, #gallery-page .camping_box, #gallery-page .fishing_box, #gallery-page .climbing_box {
+      position: absolute;
+      width: 70%;
+      height: 400px;
+      top: 150px;
+      left: 16%;
+      border-radius: 12px;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px black solid;
+      color: black;
+      transition: 0.2s; }
+      #gallery-page .hiking_box .sectioning, #gallery-page .camping_box .sectioning, #gallery-page .fishing_box .sectioning, #gallery-page .climbing_box .sectioning {
+        margin: 0;
+        padding: 0; }
     #gallery-page .hiking_box, #gallery-page .camping_box, #gallery-page .fishing_box, #gallery-page .climbing_box {
       margin: 0;
       width: 100px; }
